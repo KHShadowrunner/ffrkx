@@ -15,10 +15,5 @@ namespace FFRKInspector.GameData.Abilities
         public override double Multiplier { get { return 21; } }
         public override string Name { get { return "Water Veil"; } }
         public override int Rarity { get { return 3; } }
-
-        public override double MagicalDamage(double mag, double res)
-        {
-            return Math.Pow(mag, 0.825);
-        }
     }
 }

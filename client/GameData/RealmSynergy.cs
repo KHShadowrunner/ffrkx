@@ -106,6 +106,10 @@ namespace FFRKInspector.GameData
 
         public static SynergyValue FromSeries(uint Series)
         {
+            // Tornado Armlet has a SeriesId of 2. It probably should be 1, but it isn't.
+            if(Series == 2) {
+                Series = 1;
+            }
             return mSeriesLookup[Series];
         }
 
