@@ -232,6 +232,7 @@ namespace FFRKInspector.GameData
             LUNETH = 10300100,
             ARC = 10300200,
             REFIA = 10300300,
+            INGUS = 10300400,
             DARK_CECIL = 10400100,
             PALADIN_CECIL = 10400200,
             CAIN = 10400300,

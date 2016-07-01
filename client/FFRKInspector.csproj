@@ -554,6 +554,7 @@
     <Compile Include="GameData\SoulBreaks\FluidAura.cs" />
     <Compile Include="GameData\SoulBreaks\Froststrike.cs" />
     <Compile Include="GameData\SoulBreaks\FulminatingDarkness.cs" />
+    <Compile Include="GameData\SoulBreaks\GaiasVengeance.cs" />
     <Compile Include="GameData\SoulBreaks\Gauntlet.cs" />
     <Compile Include="GameData\SoulBreaks\GoddesssBell.cs" />
     <Compile Include="GameData\SoulBreaks\GrandCross.cs" />
