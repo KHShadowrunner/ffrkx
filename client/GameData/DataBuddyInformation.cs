@@ -122,6 +122,19 @@ namespace FFRKInspector.GameData
                 || soulBreak.SoulBreakId == SoulStrike); }
         }
 
+        public short StatInRealm(string stat, uint gameSeries)
+        {
+            return StatWithSynergy(stat, gameSeries == SeriesId);
+        }
+
+        public short StatWithSynergy(string stat, bool hasSynergy)
+        {
+            string statToUse = hasSynergy ? "Series" + stat : stat;
+
+            System.Reflection.FieldInfo statField = typeof(DataBuddyInformation).GetField(statToUse);
+            return (short)statField.GetValue(this);
+        }
+
         public override string ToString()
         {
             if (Name == "Cecil")

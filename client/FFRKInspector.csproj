@@ -102,6 +102,7 @@
     <Compile Include="GameData\Abilities\Alexander.cs" />
     <Compile Include="GameData\Abilities\ArmorBreakdown.cs" />
     <Compile Include="GameData\Abilities\ArmorStrike.cs" />
+    <Compile Include="GameData\Abilities\Attack.cs" />
     <Compile Include="GameData\Abilities\Bahamut.cs" />
     <Compile Include="GameData\Abilities\BanishingStrike.cs" />
     <Compile Include="GameData\Abilities\BioGrenade.cs" />
@@ -343,6 +344,7 @@
     <Compile Include="GameData\Abilities\FiraStrike.cs" />
     <Compile Include="GameData\Abilities\FireStrike.cs" />
     <Compile Include="GameData\Abilities\FlareStrike.cs" />
+    <Compile Include="GameData\Party\DataAbilityInformation.cs" />
     <Compile Include="GameData\Party\DataRecordMateriaInformation.cs" />
     <Compile Include="GameData\RecordMateria.cs" />
     <Compile Include="GameData\RecordMaterias\AceTurk.cs" />
@@ -368,6 +370,7 @@
     <Compile Include="GameData\RecordMaterias\DesertBloom.cs" />
     <Compile Include="GameData\RecordMaterias\Devotion.cs" />
     <Compile Include="GameData\RecordMaterias\DragoonsDetermination.cs" />
+    <Compile Include="GameData\RecordMaterias\DrMogsTeachings.cs" />
     <Compile Include="GameData\RecordMaterias\EidolonsBond.cs" />
     <Compile Include="GameData\RecordMaterias\ElderSage.cs" />
     <Compile Include="GameData\RecordMaterias\FairiesBoon.cs" />
@@ -395,6 +398,7 @@
     <Compile Include="GameData\RecordMaterias\LightOfTheFayth.cs" />
     <Compile Include="GameData\RecordMaterias\LovingSoul.cs" />
     <Compile Include="GameData\RecordMaterias\MagicMadness.cs" />
+    <Compile Include="GameData\RecordMaterias\MakoMight.cs" />
     <Compile Include="GameData\RecordMaterias\MasterArcher.cs" />
     <Compile Include="GameData\RecordMaterias\MasterSniper.cs" />
     <Compile Include="GameData\RecordMaterias\MightOfEarth.cs" />
@@ -550,6 +554,7 @@
     <Compile Include="GameData\SoulBreaks\FluidAura.cs" />
     <Compile Include="GameData\SoulBreaks\Froststrike.cs" />
     <Compile Include="GameData\SoulBreaks\FulminatingDarkness.cs" />
+    <Compile Include="GameData\SoulBreaks\GaiasVengeance.cs" />
     <Compile Include="GameData\SoulBreaks\Gauntlet.cs" />
     <Compile Include="GameData\SoulBreaks\GoddesssBell.cs" />
     <Compile Include="GameData\SoulBreaks\GrandCross.cs" />
@@ -651,6 +656,7 @@
     <Compile Include="GameData\SoulBreaks\SeikenShock.cs" />
     <Compile Include="GameData\SoulBreaks\SeikenStockBreak.cs" />
     <Compile Include="GameData\SoulBreaks\Sending.cs" />
+    <Compile Include="GameData\SoulBreaks\SentinelsGrimoire.cs" />
     <Compile Include="GameData\SoulBreaks\Shadowbringer.cs" />
     <Compile Include="GameData\SoulBreaks\ShadowFang.cs" />
     <Compile Include="GameData\SoulBreaks\ShadowFlare.cs" />
@@ -659,6 +665,7 @@
     <Compile Include="GameData\SoulBreaks\ShiftBreak.cs" />
     <Compile Include="GameData\SoulBreaks\ShiningWave.cs" />
     <Compile Include="GameData\SoulBreaks\ShootingStar.cs" />
+    <Compile Include="GameData\SoulBreaks\Shout.cs" />
     <Compile Include="GameData\SoulBreaks\ShurikenStrike.cs" />
     <Compile Include="GameData\SoulBreaks\SledFang.cs" />
     <Compile Include="GameData\SoulBreaks\SliceAndDice.cs" />
@@ -678,6 +685,7 @@
     <Compile Include="GameData\SoulBreaks\SteadyShotI.cs" />
     <Compile Include="GameData\SoulBreaks\SteadyShotII.cs" />
     <Compile Include="GameData\SoulBreaks\StellarCircle5.cs" />
+    <Compile Include="GameData\SoulBreaks\StoneskinII.cs" />
     <Compile Include="GameData\SoulBreaks\StormlanceGrimoire.cs" />
     <Compile Include="GameData\SoulBreaks\StrahlStrafe.cs" />
     <Compile Include="GameData\SoulBreaks\SummonEidolonI.cs" />
@@ -893,6 +901,18 @@
     <Compile Include="UI\DatabaseUI\MissingItemsPanel.Designer.cs">
       <DependentUpon>MissingItemsPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\OptimizerRoleSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OptimizerRoleSelector.Designer.cs">
+      <DependentUpon>OptimizerRoleSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProgressDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ProgressDisplay.Designer.cs">
+      <DependentUpon>ProgressDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\SeriesDataGridViewCell.cs" />
     <Compile Include="Analyzer\AnalyzerSettings.cs" />
     <Compile Include="UI\TextInput.cs">
@@ -956,6 +976,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ListViewEx.resx">
       <DependentUpon>ListViewEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OptimizerRoleSelector.resx">
+      <DependentUpon>OptimizerRoleSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ProgressDisplay.resx">
+      <DependentUpon>ProgressDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\TextInput.resx">
       <DependentUpon>TextInput.cs</DependentUpon>

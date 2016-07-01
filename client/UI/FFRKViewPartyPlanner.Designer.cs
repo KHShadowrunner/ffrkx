@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBoxPartyMember1 = new System.Windows.Forms.ComboBox();
             this.comboBoxPartyMember2 = new System.Windows.Forms.ComboBox();
             this.comboBoxPartyMember3 = new System.Windows.Forms.ComboBox();
@@ -160,6 +161,38 @@
             this.comboBoxSavedParties = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonDeleteParty = new System.Windows.Forms.Button();
+            this.buttonOptimize = new System.Windows.Forms.Button();
+            this.backgroundWorkerOptimizer = new System.ComponentModel.BackgroundWorker();
+            this.toolTipAbilityDamage1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbilityDamage2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbilityDamage3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbilityDamage4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbilityDamage5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbilityDamage6 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbilityDamage7 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbilityDamage8 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbilityDamage9 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbilityDamage10 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipSoulBreakDamage1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipSoulBreakDamage2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipSoulBreakDamage3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipSoulBreakDamage4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipSoulBreakDamage5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbility1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbility2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbility3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbility4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbility5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbility6 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbility7 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbility8 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbility9 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAbility10 = new System.Windows.Forms.ToolTip(this.components);
+            this.dataGridViewBossElementReactions = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ElementColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VulnerabilityColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -173,6 +206,7 @@
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBossElementReactions)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxPartyMember1
@@ -227,6 +261,7 @@
             // 
             // comboBoxAbility1
             // 
+            this.comboBoxAbility1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxAbility1.FormattingEnabled = true;
             this.comboBoxAbility1.Location = new System.Drawing.Point(5, 29);
             this.comboBoxAbility1.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
@@ -234,10 +269,12 @@
             this.comboBoxAbility1.Size = new System.Drawing.Size(114, 21);
             this.comboBoxAbility1.TabIndex = 1;
             this.comboBoxAbility1.Text = "Ability";
+            this.comboBoxAbility1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBoxAbility_DrawItem);
             this.comboBoxAbility1.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbility_SelectedIndexChanged);
             // 
             // comboBoxAbility2
             // 
+            this.comboBoxAbility2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxAbility2.FormattingEnabled = true;
             this.comboBoxAbility2.Location = new System.Drawing.Point(5, 58);
             this.comboBoxAbility2.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
@@ -245,10 +282,12 @@
             this.comboBoxAbility2.Size = new System.Drawing.Size(114, 21);
             this.comboBoxAbility2.TabIndex = 2;
             this.comboBoxAbility2.Text = "Ability";
+            this.comboBoxAbility2.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBoxAbility_DrawItem);
             this.comboBoxAbility2.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbility_SelectedIndexChanged);
             // 
             // comboBoxAbility3
             // 
+            this.comboBoxAbility3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxAbility3.FormattingEnabled = true;
             this.comboBoxAbility3.Location = new System.Drawing.Point(5, 139);
             this.comboBoxAbility3.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
@@ -256,10 +295,12 @@
             this.comboBoxAbility3.Size = new System.Drawing.Size(114, 21);
             this.comboBoxAbility3.TabIndex = 9;
             this.comboBoxAbility3.Text = "Ability";
+            this.comboBoxAbility3.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBoxAbility_DrawItem);
             this.comboBoxAbility3.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbility_SelectedIndexChanged);
             // 
             // comboBoxAbility4
             // 
+            this.comboBoxAbility4.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxAbility4.FormattingEnabled = true;
             this.comboBoxAbility4.Location = new System.Drawing.Point(5, 168);
             this.comboBoxAbility4.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
@@ -267,10 +308,12 @@
             this.comboBoxAbility4.Size = new System.Drawing.Size(114, 21);
             this.comboBoxAbility4.TabIndex = 10;
             this.comboBoxAbility4.Text = "Ability";
+            this.comboBoxAbility4.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBoxAbility_DrawItem);
             this.comboBoxAbility4.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbility_SelectedIndexChanged);
             // 
             // comboBoxAbility5
             // 
+            this.comboBoxAbility5.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxAbility5.FormattingEnabled = true;
             this.comboBoxAbility5.Location = new System.Drawing.Point(5, 238);
             this.comboBoxAbility5.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
@@ -278,10 +321,12 @@
             this.comboBoxAbility5.Size = new System.Drawing.Size(114, 21);
             this.comboBoxAbility5.TabIndex = 17;
             this.comboBoxAbility5.Text = "Ability";
+            this.comboBoxAbility5.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBoxAbility_DrawItem);
             this.comboBoxAbility5.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbility_SelectedIndexChanged);
             // 
             // comboBoxAbility6
             // 
+            this.comboBoxAbility6.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxAbility6.FormattingEnabled = true;
             this.comboBoxAbility6.Location = new System.Drawing.Point(5, 267);
             this.comboBoxAbility6.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
@@ -289,10 +334,12 @@
             this.comboBoxAbility6.Size = new System.Drawing.Size(114, 21);
             this.comboBoxAbility6.TabIndex = 18;
             this.comboBoxAbility6.Text = "Ability";
+            this.comboBoxAbility6.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBoxAbility_DrawItem);
             this.comboBoxAbility6.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbility_SelectedIndexChanged);
             // 
             // comboBoxAbility7
             // 
+            this.comboBoxAbility7.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxAbility7.FormattingEnabled = true;
             this.comboBoxAbility7.Location = new System.Drawing.Point(5, 338);
             this.comboBoxAbility7.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
@@ -300,10 +347,12 @@
             this.comboBoxAbility7.Size = new System.Drawing.Size(114, 21);
             this.comboBoxAbility7.TabIndex = 25;
             this.comboBoxAbility7.Text = "Ability";
+            this.comboBoxAbility7.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBoxAbility_DrawItem);
             this.comboBoxAbility7.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbility_SelectedIndexChanged);
             // 
             // comboBoxAbility8
             // 
+            this.comboBoxAbility8.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxAbility8.FormattingEnabled = true;
             this.comboBoxAbility8.Location = new System.Drawing.Point(5, 367);
             this.comboBoxAbility8.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
@@ -311,10 +360,12 @@
             this.comboBoxAbility8.Size = new System.Drawing.Size(114, 21);
             this.comboBoxAbility8.TabIndex = 26;
             this.comboBoxAbility8.Text = "Ability";
+            this.comboBoxAbility8.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBoxAbility_DrawItem);
             this.comboBoxAbility8.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbility_SelectedIndexChanged);
             // 
             // comboBoxAbility9
             // 
+            this.comboBoxAbility9.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxAbility9.FormattingEnabled = true;
             this.comboBoxAbility9.Location = new System.Drawing.Point(5, 436);
             this.comboBoxAbility9.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
@@ -322,10 +373,12 @@
             this.comboBoxAbility9.Size = new System.Drawing.Size(114, 21);
             this.comboBoxAbility9.TabIndex = 33;
             this.comboBoxAbility9.Text = "Ability";
+            this.comboBoxAbility9.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBoxAbility_DrawItem);
             this.comboBoxAbility9.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbility_SelectedIndexChanged);
             // 
             // comboBoxAbility10
             // 
+            this.comboBoxAbility10.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboBoxAbility10.FormattingEnabled = true;
             this.comboBoxAbility10.Location = new System.Drawing.Point(5, 465);
             this.comboBoxAbility10.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
@@ -333,6 +386,7 @@
             this.comboBoxAbility10.Size = new System.Drawing.Size(114, 21);
             this.comboBoxAbility10.TabIndex = 34;
             this.comboBoxAbility10.Text = "Ability";
+            this.comboBoxAbility10.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.comboBoxAbility_DrawItem);
             this.comboBoxAbility10.SelectedIndexChanged += new System.EventHandler(this.comboBoxAbility_SelectedIndexChanged);
             // 
             // comboBoxSoulBreak1
@@ -1290,9 +1344,9 @@
             this.groupBox10.Controls.Add(this.checkBoxMentalBreakdown);
             this.groupBox10.Controls.Add(this.checkBoxFullBreak);
             this.groupBox10.Controls.Add(this.checkBoxArmorBreakdown);
-            this.groupBox10.Location = new System.Drawing.Point(749, 303);
+            this.groupBox10.Location = new System.Drawing.Point(728, 303);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(278, 119);
+            this.groupBox10.Size = new System.Drawing.Size(266, 119);
             this.groupBox10.TabIndex = 52;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Debuffs";
@@ -1529,10 +1583,77 @@
             this.buttonDeleteParty.UseVisualStyleBackColor = true;
             this.buttonDeleteParty.Click += new System.EventHandler(this.buttonDeleteParty_Click);
             // 
+            // buttonOptimize
+            // 
+            this.buttonOptimize.Location = new System.Drawing.Point(573, 522);
+            this.buttonOptimize.Name = "buttonOptimize";
+            this.buttonOptimize.Size = new System.Drawing.Size(75, 23);
+            this.buttonOptimize.TabIndex = 33;
+            this.buttonOptimize.Text = "Optimize";
+            this.buttonOptimize.UseVisualStyleBackColor = true;
+            this.buttonOptimize.Click += new System.EventHandler(this.buttonOptimize_Click);
+            // 
+            // backgroundWorkerOptimizer
+            // 
+            this.backgroundWorkerOptimizer.WorkerReportsProgress = true;
+            this.backgroundWorkerOptimizer.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerOptimizer_DoWork);
+            this.backgroundWorkerOptimizer.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerOptimizer_ProgressChanged);
+            this.backgroundWorkerOptimizer.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerOptimizer_RunWorkerCompleted);
+            // 
+            // dataGridViewBossElementReactions
+            // 
+            this.dataGridViewBossElementReactions.AllowUserToAddRows = false;
+            this.dataGridViewBossElementReactions.AllowUserToDeleteRows = false;
+            this.dataGridViewBossElementReactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBossElementReactions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ElementColumn,
+            this.VulnerabilityColumn});
+            this.dataGridViewBossElementReactions.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridViewBossElementReactions.Location = new System.Drawing.Point(818, 428);
+            this.dataGridViewBossElementReactions.Name = "dataGridViewBossElementReactions";
+            this.dataGridViewBossElementReactions.RowHeadersVisible = false;
+            this.dataGridViewBossElementReactions.Size = new System.Drawing.Size(215, 118);
+            this.dataGridViewBossElementReactions.TabIndex = 75;
+            this.dataGridViewBossElementReactions.CellParsing += new System.Windows.Forms.DataGridViewCellParsingEventHandler(this.dataGridViewBossElementReactions_CellParsing);
+            this.dataGridViewBossElementReactions.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBossElementReactions_CellValueChanged);
+            this.dataGridViewBossElementReactions.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridViewBossElementReactions_CurrentCellDirtyStateChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Element";
+            this.dataGridViewTextBoxColumn1.MaxInputLength = 16;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.dataGridViewComboBoxColumn1.HeaderText = "Vulnerability";
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            // 
+            // ElementColumn
+            // 
+            this.ElementColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ElementColumn.HeaderText = "Element";
+            this.ElementColumn.MaxInputLength = 16;
+            this.ElementColumn.Name = "ElementColumn";
+            this.ElementColumn.ReadOnly = true;
+            this.ElementColumn.Width = 70;
+            // 
+            // VulnerabilityColumn
+            // 
+            this.VulnerabilityColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.VulnerabilityColumn.HeaderText = "Vulnerability";
+            this.VulnerabilityColumn.Name = "VulnerabilityColumn";
+            // 
             // FFRKViewPartyPlanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataGridViewBossElementReactions);
+            this.Controls.Add(this.buttonOptimize);
             this.Controls.Add(this.buttonDeleteParty);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxSavedParties);
@@ -1587,6 +1708,7 @@
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBossElementReactions)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1726,5 +1848,37 @@
         private System.Windows.Forms.ComboBox comboBoxSavedParties;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonDeleteParty;
+        private System.Windows.Forms.Button buttonOptimize;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerOptimizer;
+        private System.Windows.Forms.ToolTip toolTipAbilityDamage1;
+        private System.Windows.Forms.ToolTip toolTipAbilityDamage2;
+        private System.Windows.Forms.ToolTip toolTipAbilityDamage3;
+        private System.Windows.Forms.ToolTip toolTipAbilityDamage4;
+        private System.Windows.Forms.ToolTip toolTipAbilityDamage5;
+        private System.Windows.Forms.ToolTip toolTipAbilityDamage6;
+        private System.Windows.Forms.ToolTip toolTipAbilityDamage7;
+        private System.Windows.Forms.ToolTip toolTipAbilityDamage8;
+        private System.Windows.Forms.ToolTip toolTipAbilityDamage9;
+        private System.Windows.Forms.ToolTip toolTipAbilityDamage10;
+        private System.Windows.Forms.ToolTip toolTipSoulBreakDamage1;
+        private System.Windows.Forms.ToolTip toolTipSoulBreakDamage2;
+        private System.Windows.Forms.ToolTip toolTipSoulBreakDamage3;
+        private System.Windows.Forms.ToolTip toolTipSoulBreakDamage4;
+        private System.Windows.Forms.ToolTip toolTipSoulBreakDamage5;
+        private System.Windows.Forms.ToolTip toolTipAbility1;
+        private System.Windows.Forms.ToolTip toolTipAbility2;
+        private System.Windows.Forms.ToolTip toolTipAbility3;
+        private System.Windows.Forms.ToolTip toolTipAbility4;
+        private System.Windows.Forms.ToolTip toolTipAbility5;
+        private System.Windows.Forms.ToolTip toolTipAbility6;
+        private System.Windows.Forms.ToolTip toolTipAbility7;
+        private System.Windows.Forms.ToolTip toolTipAbility8;
+        private System.Windows.Forms.ToolTip toolTipAbility9;
+        private System.Windows.Forms.ToolTip toolTipAbility10;
+        private System.Windows.Forms.DataGridView dataGridViewBossElementReactions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ElementColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn VulnerabilityColumn;
     }
 }
