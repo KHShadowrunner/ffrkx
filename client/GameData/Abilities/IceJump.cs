@@ -15,5 +15,6 @@ namespace FFRKInspector.GameData.Abilities
         public override double Multiplier { get { return 2.1; } }
         public override string Name { get { return "Ice Jump"; } }
         public override int Rarity { get { return 3; } }
+        public override bool IsJumpAttack() { return true; }
     }
 }

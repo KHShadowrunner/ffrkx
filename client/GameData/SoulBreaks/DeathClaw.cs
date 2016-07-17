@@ -14,5 +14,6 @@ namespace FFRKInspector.GameData.SoulBreaks
         public override double Multiplier { get { return 1.7; } }
         public override string Name { get { return "Death Claw"; } }
         public override int NumberOfHits { get { return 3; } }
+        public override bool IsJumpAttack() { return true; }
     }
 }

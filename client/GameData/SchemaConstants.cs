@@ -55,6 +55,9 @@ namespace FFRKInspector.GameData
             Gun = 15,
             Ball = 30,
             Hairpin = 31,
+            GunArm = 32,
+            Gambling = 33,
+            Doll = 34,
             Shield = 50,
             Hat = 51,
             Helm = 52,
@@ -87,6 +90,7 @@ namespace FFRKInspector.GameData
             Dancer = 15,
             Machinist = 16,
             Darkness = 17,
+            Sniper = 18,
             None = -1
         };
 
@@ -215,6 +219,7 @@ namespace FFRKInspector.GameData
             MAGIC_KNIGHT = 10002100,
             DARK_KNIGHT = 10002200,
             VIKING = 10002400,
+            BERSERKER = 10002500,
             RANGER = 10002600,
             THIEF = 10002700,
             BARD = 10002800,
@@ -233,6 +238,7 @@ namespace FFRKInspector.GameData
             ARC = 10300200,
             REFIA = 10300300,
             INGUS = 10300400,
+            DESCH = 10300500,
             DARK_CECIL = 10400100,
             PALADIN_CECIL = 10400200,
             CAIN = 10400300,
@@ -274,6 +280,7 @@ namespace FFRKInspector.GameData
             AERITH = 10700400,
             RED_XIII = 10700500,
             YUFFIE = 10700600,
+            CAITSITH = 10700700,
             VINCENT = 10700800,
             ZACK = 10700900,
             SEPHIROTH = 10701000,
@@ -297,6 +304,7 @@ namespace FFRKInspector.GameData
             EIKO = 10900700,
             AMARANT = 10900800,
             BEATRIX = 10900900,
+            KUJA = 10901000,
             TIDUS = 11000100,
             YUNA = 11000200,
             WAKKA = 11000300,
@@ -305,6 +313,7 @@ namespace FFRKInspector.GameData
             RIKKU = 11000600,
             AURON = 11000700,
             JECHT = 11001000,
+            BRASKA = 11001200,
             VAAN = 11200100,
             BALFLEAR = 11200200,
             FRAN = 11200300,
@@ -321,6 +330,8 @@ namespace FFRKInspector.GameData
             NOEL = 11300800,
             YSHTOLA = 11400100,
             THANCRED = 11400200,
+            YDA = 11400300,
+            PAPALYMO = 11400500,
             RAMZA = 15000100,
             AGRIAS = 15000200
         }
