@@ -401,9 +401,11 @@
     <Compile Include="GameData\RecordMaterias\EternalOptimist.cs" />
     <Compile Include="GameData\RecordMaterias\EtrosIntervention.cs" />
     <Compile Include="GameData\RecordMaterias\FairiesBoon.cs" />
+    <Compile Include="GameData\RecordMaterias\FallenGunblade.cs" />
     <Compile Include="GameData\RecordMaterias\FeralMight.cs" />
     <Compile Include="GameData\RecordMaterias\FistOfDawn.cs" />
     <Compile Include="GameData\RecordMaterias\FleshUndying.cs" />
+    <Compile Include="GameData\RecordMaterias\FragilePsyche.cs" />
     <Compile Include="GameData\RecordMaterias\FrailPrince.cs" />
     <Compile Include="GameData\RecordMaterias\FraternalKnowledge.cs" />
     <Compile Include="GameData\RecordMaterias\FreedomsWish.cs" />
@@ -557,6 +559,7 @@
     <Compile Include="GameData\SoulBreaks\DarkCannon.cs" />
     <Compile Include="GameData\SoulBreaks\DarkflareStar.cs" />
     <Compile Include="GameData\SoulBreaks\Darkness.cs" />
+    <Compile Include="GameData\SoulBreaks\DarkShotVIII.cs" />
     <Compile Include="GameData\SoulBreaks\DeathBlossom.cs" />
     <Compile Include="GameData\SoulBreaks\DeathClaw.cs" />
     <Compile Include="GameData\SoulBreaks\DelayAttack.cs" />
@@ -613,6 +616,7 @@
     <Compile Include="GameData\SoulBreaks\FlamesOfKashuan.cs" />
     <Compile Include="GameData\SoulBreaks\FlamesOfRebirth.cs" />
     <Compile Include="GameData\SoulBreaks\FluidAura.cs" />
+    <Compile Include="GameData\SoulBreaks\FreezingBarrage.cs" />
     <Compile Include="GameData\SoulBreaks\Froststrike.cs" />
     <Compile Include="GameData\SoulBreaks\FulminatingDarkness.cs" />
     <Compile Include="GameData\SoulBreaks\GaiasVengeance.cs" />
@@ -678,6 +682,7 @@
     <Compile Include="GameData\SoulBreaks\MirageDive.cs" />
     <Compile Include="GameData\SoulBreaks\MissileSalvo.cs" />
     <Compile Include="GameData\SoulBreaks\MistOverload.cs" />
+    <Compile Include="GameData\SoulBreaks\MysticFlurry.cs" />
     <Compile Include="GameData\SoulBreaks\Nekodamashi.cs" />
     <Compile Include="GameData\SoulBreaks\NibelheimNightmare.cs" />
     <Compile Include="GameData\SoulBreaks\Nightglow.cs" />
@@ -812,6 +817,7 @@
     <Compile Include="GameData\SoulBreaks\WishingStar.cs" />
     <Compile Include="GameData\SoulBreaks\WitheringWinds.cs" />
     <Compile Include="GameData\SoulBreaks\Wound.cs" />
+    <Compile Include="GameData\SoulBreaks\ZantetsukenReverse.cs" />
     <Compile Include="GameData\StatCalculator.cs" />
     <Compile Include="GameData\Abilities\ThundagaStrike.cs" />
     <Compile Include="GameData\Abilities\ThundaraStrike.cs" />
