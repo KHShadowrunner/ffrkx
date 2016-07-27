@@ -91,5 +91,10 @@ namespace FFRKInspector.GameData
         {
             return ((atk < AtkCap) ? Math.Pow(atk, 1.8) : 4000 * Math.Pow(atk, 0.5)) / Math.Pow(def, 0.5);
         }
+
+        public virtual bool IsJumpAttack()
+        {
+            return false;
+        }
     }
 }

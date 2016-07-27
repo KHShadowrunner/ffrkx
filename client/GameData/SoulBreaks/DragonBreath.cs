@@ -14,5 +14,6 @@ namespace FFRKInspector.GameData.SoulBreaks
         public override double Multiplier { get { return 1.03; } }
         public override string Name { get { return "Dragon Breath"; } }
         public override int NumberOfHits { get { return 5; } }
+        public override bool IsJumpAttack() { return true; }
     }
 }

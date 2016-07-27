@@ -13,5 +13,6 @@ namespace FFRKInspector.GameData.SoulBreaks
         public override SchemaConstants.Formulas Formula { get { return SchemaConstants.Formulas.Physical; } }
         public override double Multiplier { get { return 1.5; } }
         public override string Name { get { return "Boost Jump"; } }
+        public override bool IsJumpAttack() { return true; }
     }
 }

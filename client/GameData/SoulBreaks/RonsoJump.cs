@@ -14,5 +14,6 @@ namespace FFRKInspector.GameData.SoulBreaks
         public override double Multiplier { get { return 1.29; } }
         public override string Name { get { return "Ronso Jump"; } }
         public override int NumberOfHits { get { return 4; } }
+        public override bool IsJumpAttack() { return true; }
     }
 }

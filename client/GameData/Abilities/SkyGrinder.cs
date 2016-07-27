@@ -15,5 +15,6 @@ namespace FFRKInspector.GameData.Abilities
         public override string Name { get { return "Sky Grinder"; } }
         public override int Rarity { get { return 5; } }
         public override int NumberOfHits { get { return 2; } }
+        public override bool IsJumpAttack() { return true; }
     }
 }

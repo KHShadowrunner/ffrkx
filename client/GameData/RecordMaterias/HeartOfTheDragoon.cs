@@ -13,23 +13,7 @@ namespace FFRKInspector.GameData.RecordMaterias
 
         public override double AbilityModifier(Party.DataEquipmentInformation weapon, Party.DataEquipmentInformation armor, Party.DataEquipmentInformation accessory, Ability ability)
         {
-            if (ability.Name == "Sky Grinder" ||
-                ability.Name == "High Jump" ||
-                ability.Name == "Double Jump" ||
-                ability.Name == "Gungnir" ||
-                ability.Name == "Rising Drive" ||
-                ability.Name == "Death Claw" ||
-                ability.Name == "Repentance" ||
-                ability.Name == "Boost Jump" ||
-                ability.Name == "Hyper Jump" ||
-                ability.Name == "Dragon Breath" ||
-                ability.Name == "Jump" ||
-                ability.Name == "Wind Jump" ||
-                ability.Name == "Ice Jump" ||
-                ability.Name == "Lightning Jump" ||
-                ability.Name == "Soaring Jump" ||
-                ability.Name == "Leeching Leap"
-                )
+            if (ability.IsJumpAttack())
             {
                 return 1.2;
             }

@@ -748,6 +748,22 @@ namespace FFRKInspector.UI
                 {
                     hits = Math.Max(1, (int)Math.Floor((Double.Parse(spdFields[characterIndex].Text) - 120) / 10));
                 }
+                else if (ability.GetType() == typeof(GameData.SoulBreaks.AeonsOfWingAndFlame))
+                {
+                    double mag = Double.Parse(magFields[characterIndex].Text);
+                    if (mag >= 723)
+                    {
+                        hits = 9;
+                    }
+                    else if (mag >= 681)
+                    {
+                        hits = 8;
+                    }
+                    else if (mag >= 562)
+                    {
+                        hits = 7;
+                    }
+                }
                 tooltip.SetToolTip(damageField, (Math.Min(damage, 9999) * hits).ToString("#,##0.##") + " total damage");
                 damageString += " * " + hits;
             }
