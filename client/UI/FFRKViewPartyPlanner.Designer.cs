@@ -155,6 +155,11 @@
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.comboBoxAttachElement5 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAttachElement4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAttachElement3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAttachElement2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxAttachElement1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSaveParty = new System.Windows.Forms.Button();
             this.buttonLoadParty = new System.Windows.Forms.Button();
@@ -189,10 +194,15 @@
             this.toolTipAbility9 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipAbility10 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridViewBossElementReactions = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ElementColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VulnerabilityColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.checkBoxBurstMode1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxBurstMode2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxBurstMode3 = new System.Windows.Forms.CheckBox();
+            this.checkBoxBurstMode4 = new System.Windows.Forms.CheckBox();
+            this.checkBoxBurstMode5 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -1498,6 +1508,16 @@
             // 
             // groupBox13
             // 
+            this.groupBox13.Controls.Add(this.checkBoxBurstMode5);
+            this.groupBox13.Controls.Add(this.checkBoxBurstMode4);
+            this.groupBox13.Controls.Add(this.checkBoxBurstMode3);
+            this.groupBox13.Controls.Add(this.checkBoxBurstMode2);
+            this.groupBox13.Controls.Add(this.checkBoxBurstMode1);
+            this.groupBox13.Controls.Add(this.comboBoxAttachElement5);
+            this.groupBox13.Controls.Add(this.comboBoxAttachElement4);
+            this.groupBox13.Controls.Add(this.comboBoxAttachElement3);
+            this.groupBox13.Controls.Add(this.comboBoxAttachElement2);
+            this.groupBox13.Controls.Add(this.comboBoxAttachElement1);
             this.groupBox13.Controls.Add(this.comboBoxRecordMateria5);
             this.groupBox13.Controls.Add(this.comboBoxRecordMateria4);
             this.groupBox13.Controls.Add(this.comboBoxRecordMateria3);
@@ -1524,6 +1544,56 @@
             this.groupBox13.TabIndex = 68;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Equipment and Record Materias";
+            // 
+            // comboBoxAttachElement5
+            // 
+            this.comboBoxAttachElement5.FormattingEnabled = true;
+            this.comboBoxAttachElement5.Location = new System.Drawing.Point(132, 464);
+            this.comboBoxAttachElement5.Name = "comboBoxAttachElement5";
+            this.comboBoxAttachElement5.Size = new System.Drawing.Size(115, 21);
+            this.comboBoxAttachElement5.TabIndex = 43;
+            this.comboBoxAttachElement5.Text = "Attach";
+            this.comboBoxAttachElement5.SelectedIndexChanged += new System.EventHandler(this.comboBoxAttachElement_SelectedIndexChanged);
+            // 
+            // comboBoxAttachElement4
+            // 
+            this.comboBoxAttachElement4.FormattingEnabled = true;
+            this.comboBoxAttachElement4.Location = new System.Drawing.Point(132, 366);
+            this.comboBoxAttachElement4.Name = "comboBoxAttachElement4";
+            this.comboBoxAttachElement4.Size = new System.Drawing.Size(115, 21);
+            this.comboBoxAttachElement4.TabIndex = 42;
+            this.comboBoxAttachElement4.Text = "Attach";
+            this.comboBoxAttachElement4.SelectedIndexChanged += new System.EventHandler(this.comboBoxAttachElement_SelectedIndexChanged);
+            // 
+            // comboBoxAttachElement3
+            // 
+            this.comboBoxAttachElement3.FormattingEnabled = true;
+            this.comboBoxAttachElement3.Location = new System.Drawing.Point(132, 266);
+            this.comboBoxAttachElement3.Name = "comboBoxAttachElement3";
+            this.comboBoxAttachElement3.Size = new System.Drawing.Size(115, 21);
+            this.comboBoxAttachElement3.TabIndex = 41;
+            this.comboBoxAttachElement3.Text = "Attach";
+            this.comboBoxAttachElement3.SelectedIndexChanged += new System.EventHandler(this.comboBoxAttachElement_SelectedIndexChanged);
+            // 
+            // comboBoxAttachElement2
+            // 
+            this.comboBoxAttachElement2.FormattingEnabled = true;
+            this.comboBoxAttachElement2.Location = new System.Drawing.Point(132, 167);
+            this.comboBoxAttachElement2.Name = "comboBoxAttachElement2";
+            this.comboBoxAttachElement2.Size = new System.Drawing.Size(115, 21);
+            this.comboBoxAttachElement2.TabIndex = 40;
+            this.comboBoxAttachElement2.Text = "Attach";
+            this.comboBoxAttachElement2.SelectedIndexChanged += new System.EventHandler(this.comboBoxAttachElement_SelectedIndexChanged);
+            // 
+            // comboBoxAttachElement1
+            // 
+            this.comboBoxAttachElement1.FormattingEnabled = true;
+            this.comboBoxAttachElement1.Location = new System.Drawing.Point(132, 57);
+            this.comboBoxAttachElement1.Name = "comboBoxAttachElement1";
+            this.comboBoxAttachElement1.Size = new System.Drawing.Size(115, 21);
+            this.comboBoxAttachElement1.TabIndex = 33;
+            this.comboBoxAttachElement1.Text = "Attach";
+            this.comboBoxAttachElement1.SelectedIndexChanged += new System.EventHandler(this.comboBoxAttachElement_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -1618,21 +1688,6 @@
             this.dataGridViewBossElementReactions.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBossElementReactions_CellValueChanged);
             this.dataGridViewBossElementReactions.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridViewBossElementReactions_CurrentCellDirtyStateChanged);
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Element";
-            this.dataGridViewTextBoxColumn1.MaxInputLength = 16;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 70;
-            // 
-            // dataGridViewComboBoxColumn1
-            // 
-            this.dataGridViewComboBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.dataGridViewComboBoxColumn1.HeaderText = "Vulnerability";
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            // 
             // ElementColumn
             // 
             this.ElementColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1647,6 +1702,75 @@
             this.VulnerabilityColumn.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.VulnerabilityColumn.HeaderText = "Vulnerability";
             this.VulnerabilityColumn.Name = "VulnerabilityColumn";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Element";
+            this.dataGridViewTextBoxColumn1.MaxInputLength = 16;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewComboBoxColumn1
+            // 
+            this.dataGridViewComboBoxColumn1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.dataGridViewComboBoxColumn1.HeaderText = "Vulnerability";
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            // 
+            // checkBoxBurstMode1
+            // 
+            this.checkBoxBurstMode1.AutoSize = true;
+            this.checkBoxBurstMode1.Location = new System.Drawing.Point(132, 84);
+            this.checkBoxBurstMode1.Name = "checkBoxBurstMode1";
+            this.checkBoxBurstMode1.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxBurstMode1.TabIndex = 44;
+            this.checkBoxBurstMode1.Text = "Burst";
+            this.checkBoxBurstMode1.UseVisualStyleBackColor = true;
+            this.checkBoxBurstMode1.CheckedChanged += new System.EventHandler(this.checkBoxBurstMode_CheckedChanged);
+            // 
+            // checkBoxBurstMode2
+            // 
+            this.checkBoxBurstMode2.AutoSize = true;
+            this.checkBoxBurstMode2.Location = new System.Drawing.Point(132, 194);
+            this.checkBoxBurstMode2.Name = "checkBoxBurstMode2";
+            this.checkBoxBurstMode2.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxBurstMode2.TabIndex = 45;
+            this.checkBoxBurstMode2.Text = "Burst";
+            this.checkBoxBurstMode2.UseVisualStyleBackColor = true;
+            this.checkBoxBurstMode2.CheckedChanged += new System.EventHandler(this.checkBoxBurstMode_CheckedChanged);
+            // 
+            // checkBoxBurstMode3
+            // 
+            this.checkBoxBurstMode3.AutoSize = true;
+            this.checkBoxBurstMode3.Location = new System.Drawing.Point(132, 293);
+            this.checkBoxBurstMode3.Name = "checkBoxBurstMode3";
+            this.checkBoxBurstMode3.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxBurstMode3.TabIndex = 46;
+            this.checkBoxBurstMode3.Text = "Burst";
+            this.checkBoxBurstMode3.UseVisualStyleBackColor = true;
+            this.checkBoxBurstMode3.CheckedChanged += new System.EventHandler(this.checkBoxBurstMode_CheckedChanged);
+            // 
+            // checkBoxBurstMode4
+            // 
+            this.checkBoxBurstMode4.AutoSize = true;
+            this.checkBoxBurstMode4.Location = new System.Drawing.Point(132, 393);
+            this.checkBoxBurstMode4.Name = "checkBoxBurstMode4";
+            this.checkBoxBurstMode4.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxBurstMode4.TabIndex = 47;
+            this.checkBoxBurstMode4.Text = "Burst";
+            this.checkBoxBurstMode4.UseVisualStyleBackColor = true;
+            this.checkBoxBurstMode4.CheckedChanged += new System.EventHandler(this.checkBoxBurstMode_CheckedChanged);
+            // 
+            // checkBoxBurstMode5
+            // 
+            this.checkBoxBurstMode5.AutoSize = true;
+            this.checkBoxBurstMode5.Location = new System.Drawing.Point(132, 491);
+            this.checkBoxBurstMode5.Name = "checkBoxBurstMode5";
+            this.checkBoxBurstMode5.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxBurstMode5.TabIndex = 48;
+            this.checkBoxBurstMode5.Text = "Burst";
+            this.checkBoxBurstMode5.UseVisualStyleBackColor = true;
+            this.checkBoxBurstMode5.CheckedChanged += new System.EventHandler(this.checkBoxBurstMode_CheckedChanged);
             // 
             // FFRKViewPartyPlanner
             // 
@@ -1708,6 +1832,7 @@
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBossElementReactions)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1880,5 +2005,15 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ElementColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn VulnerabilityColumn;
+        private System.Windows.Forms.ComboBox comboBoxAttachElement5;
+        private System.Windows.Forms.ComboBox comboBoxAttachElement4;
+        private System.Windows.Forms.ComboBox comboBoxAttachElement3;
+        private System.Windows.Forms.ComboBox comboBoxAttachElement2;
+        private System.Windows.Forms.ComboBox comboBoxAttachElement1;
+        private System.Windows.Forms.CheckBox checkBoxBurstMode1;
+        private System.Windows.Forms.CheckBox checkBoxBurstMode5;
+        private System.Windows.Forms.CheckBox checkBoxBurstMode4;
+        private System.Windows.Forms.CheckBox checkBoxBurstMode3;
+        private System.Windows.Forms.CheckBox checkBoxBurstMode2;
     }
 }

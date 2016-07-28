@@ -23,6 +23,8 @@ namespace FFRKInspector.UI
         private ComboBox[] armorBoxes = new ComboBox[5];
         private ComboBox[] accessoryBoxes = new ComboBox[5];
         private ComboBox[] recordMateriaBoxes = new ComboBox[5];
+        private ComboBox[] attachElementBoxes = new ComboBox[5];
+        private CheckBox[] burstModeBoxes = new CheckBox[5];
         private TextBox[] hpFields = new TextBox[5];
         private TextBox[] atkFields = new TextBox[5];
         private TextBox[] magFields = new TextBox[5];
@@ -138,6 +140,18 @@ namespace FFRKInspector.UI
             recordMateriaBoxes[3] = comboBoxRecordMateria4;
             recordMateriaBoxes[4] = comboBoxRecordMateria5;
 
+            attachElementBoxes[0] = comboBoxAttachElement1;
+            attachElementBoxes[1] = comboBoxAttachElement2;
+            attachElementBoxes[2] = comboBoxAttachElement3;
+            attachElementBoxes[3] = comboBoxAttachElement4;
+            attachElementBoxes[4] = comboBoxAttachElement5;
+
+            burstModeBoxes[0] = checkBoxBurstMode1;
+            burstModeBoxes[1] = checkBoxBurstMode2;
+            burstModeBoxes[2] = checkBoxBurstMode3;
+            burstModeBoxes[3] = checkBoxBurstMode4;
+            burstModeBoxes[4] = checkBoxBurstMode5;
+
             hpFields[0] = textBoxHP1;
             hpFields[1] = textBoxHP2;
             hpFields[2] = textBoxHP3;
@@ -232,6 +246,23 @@ namespace FFRKInspector.UI
             comboBoxRealmSynergy.Items.Add(new Synergy("Northern Cross Nightmare", 406001, GameData.SchemaConstants.AbilityCategory.Celerity));
             comboBoxRealmSynergy.Items.Add(new Synergy("Meltdown Nightmare", 407001, GameData.SchemaConstants.AbilityCategory.BlackMagic));
 
+            for (int i = 0; i < 5; i++)
+            {
+                attachElementBoxes[i].Items.Add(new ElementAdvantage("None", (uint)GameData.SchemaConstants.ElementID.None, 1.0f));
+            }
+            
+            foreach (GameData.SchemaConstants.ElementID element in ((GameData.SchemaConstants.ElementID[])Enum.GetValues(typeof(GameData.SchemaConstants.ElementID))).OrderBy(e => e.ToString()))
+            {
+                if (element == GameData.SchemaConstants.ElementID.None || element == GameData.SchemaConstants.ElementID.Nothing)
+                {
+                    continue;
+                }
+                for (int i = 0; i < 5; i++)
+                {
+                    attachElementBoxes[i].Items.Add(new ElementAdvantage(element.ToString(), (uint)element, 1.0f));
+                }
+            }
+            
             equipmentModal.UpdateRealmSynergies(comboBoxRealmSynergy.Items);
             fillBossElementalReactions();
             LoadSavedParties();
@@ -439,6 +470,32 @@ namespace FFRKInspector.UI
             }
         }
 
+        private ElementAdvantage[] attachElements
+        {
+            get
+            {
+                return new ElementAdvantage[] {
+                (ElementAdvantage)comboBoxAttachElement1.SelectedItem,
+                (ElementAdvantage)comboBoxAttachElement2.SelectedItem,
+                (ElementAdvantage)comboBoxAttachElement3.SelectedItem,
+                (ElementAdvantage)comboBoxAttachElement4.SelectedItem,
+                (ElementAdvantage)comboBoxAttachElement5.SelectedItem};
+            }
+        }
+
+        private bool[] burstModes
+        {
+            get
+            {
+                return new bool[] {
+                checkBoxBurstMode1.Checked,
+                checkBoxBurstMode2.Checked,
+                checkBoxBurstMode3.Checked,
+                checkBoxBurstMode4.Checked,
+                checkBoxBurstMode5.Checked};
+            }
+        }
+
         private Synergy RealmSynergy
         {
             get
@@ -565,14 +622,14 @@ namespace FFRKInspector.UI
                 accessoryBoxes[characterIndex].BackColor = nonSynergyColor;
             }
 
-            hpFields[characterIndex].Text = CalculateStat("HP", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy).ToString("#,##0.##"); ;
-            atkFields[characterIndex].Text = CalculateStat("Atk", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy).ToString("#,##0.##");
-            magFields[characterIndex].Text = CalculateStat("Mag", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy).ToString("#,##0.##");
-            mndFields[characterIndex].Text = CalculateStat("Mnd", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy).ToString("#,##0.##");
-            defFields[characterIndex].Text = CalculateStat("Def", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy).ToString("#,##0.##");
-            resFields[characterIndex].Text = CalculateStat("Res", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy).ToString("#,##0.##");
-            evaFields[characterIndex].Text = CalculateStat("Eva", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy).ToString("#,##0.##");
-            spdFields[characterIndex].Text = CalculateStat("Spd", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy).ToString("#,##0.##");
+            hpFields[characterIndex].Text = CalculateStat("HP", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[characterIndex]).ToString("#,##0.##");
+            atkFields[characterIndex].Text = CalculateStat("Atk", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[characterIndex]).ToString("#,##0.##");
+            magFields[characterIndex].Text = CalculateStat("Mag", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[characterIndex]).ToString("#,##0.##");
+            mndFields[characterIndex].Text = CalculateStat("Mnd", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[characterIndex]).ToString("#,##0.##");
+            defFields[characterIndex].Text = CalculateStat("Def", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[characterIndex]).ToString("#,##0.##");
+            resFields[characterIndex].Text = CalculateStat("Res", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[characterIndex]).ToString("#,##0.##");
+            evaFields[characterIndex].Text = CalculateStat("Eva", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[characterIndex]).ToString("#,##0.##");
+            spdFields[characterIndex].Text = CalculateStat("Spd", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[characterIndex]).ToString("#,##0.##");
 
             if (abilities[characterIndex * 2] != null)
             {
@@ -640,7 +697,7 @@ namespace FFRKInspector.UI
 
         private double CalculateStat(string stat, GameData.DataBuddyInformation character, DataEquipmentInformation weapon, 
             DataEquipmentInformation armor, DataEquipmentInformation accessory, DataRecordMateriaInformation recordMateria,
-            bool characterHasSynergy, bool weaponHasSynergy, bool armorHasSynergy, bool accessoryHasSynergy)
+            bool characterHasSynergy, bool weaponHasSynergy, bool armorHasSynergy, bool accessoryHasSynergy, bool burstMode)
         {
             double baseValue = (character != null ? character.StatWithSynergy(stat, characterHasSynergy) : 0) +
                 (weapon != null ? weapon.StatWithSynergy(stat, weaponHasSynergy) : 0) +
@@ -669,6 +726,7 @@ namespace FFRKInspector.UI
                             multiplier *= 1.1;
                         }
                     }
+                    
                     if (checkBoxShout.Checked)
                     {
                         multiplier *= 1.5;
@@ -678,6 +736,12 @@ namespace FFRKInspector.UI
                     {
                         multiplier *= 1.3;
                     }
+
+                    if (burstMode)
+                    {
+                        multiplier *= 1.2;
+                    }
+                    
                     baseValue *= BuffedOffensiveMultiplier(multiplier);
                     break;
 
@@ -691,10 +755,20 @@ namespace FFRKInspector.UI
                     {
                         multiplier *= 1.2;
                     }
+                    
+                    if (burstMode)
+                    {
+                        multiplier *= 1.2;
+                    }
                     baseValue *= BuffedOffensiveMultiplier(multiplier);
                     break;
 
                 case "Mnd":
+                    if (burstMode)
+                    {
+                        multiplier *= 1.2;
+                    }
+                    
                     baseValue *= BuffedOffensiveMultiplier(multiplier);
                     break;
 
@@ -711,6 +785,11 @@ namespace FFRKInspector.UI
                     {
                         multiplier *= 1.3;
                     }
+                    
+                    if (burstMode)
+                    {
+                        multiplier *= 1.2;
+                    }
                     baseValue *= BuffedDefensiveMultiplier(multiplier);
                     break;
 
@@ -719,8 +798,23 @@ namespace FFRKInspector.UI
                     {
                         multiplier *= 1.5;
                     }
+                    
+                    if (burstMode)
+                    {
+                        multiplier *= 1.2;
+                    }
                     baseValue *= BuffedDefensiveMultiplier(multiplier);
                     break;
+
+                case "Spd":
+                    if (burstMode)
+                    {
+                        multiplier *= 1.1;
+                    }
+
+                    baseValue *= multiplier;
+                    break;
+                
                 default:
                     break;
             }
@@ -735,10 +829,15 @@ namespace FFRKInspector.UI
             DataEquipmentInformation armor = armors[characterIndex];
             DataEquipmentInformation accessory = accessories[characterIndex];
             DataRecordMateriaInformation recordMateria = recordMaterias[characterIndex];
+            ElementAdvantage attachElement = attachElements[characterIndex];
+            if (attachElement == null)
+            {
+                attachElement = new ElementAdvantage("None", (uint)GameData.SchemaConstants.ElementID.None, 1.0f);
+            }
 
             int damage = (int)Math.Floor(damagePerHit(character, weapon, armor, accessory, recordMateria,
                 Double.Parse(atkFields[characterIndex].Text), Double.Parse(magFields[characterIndex].Text),
-                Double.Parse(mndFields[characterIndex].Text), ability));
+                Double.Parse(mndFields[characterIndex].Text), ability, (GameData.SchemaConstants.ElementID)attachElement.AdvantageId));
 
             string damageString = damage.ToString("#,##0.##");
             if (ability.NumberOfHits > 1 || ability.GetType() == typeof(GameData.Abilities.ThiefsRevenge))
@@ -776,7 +875,7 @@ namespace FFRKInspector.UI
 
         private double damagePerHit(GameData.DataBuddyInformation character, DataEquipmentInformation weapon, DataEquipmentInformation armor, 
             DataEquipmentInformation accessory, DataRecordMateriaInformation recordMateria, 
-            double atk, double mag, double mnd, GameData.Ability ability)
+            double atk, double mag, double mnd, GameData.Ability ability, GameData.SchemaConstants.ElementID attachElement)
         {
             if (ability.Name == "Cactuar")
             {
@@ -792,7 +891,8 @@ namespace FFRKInspector.UI
                 damage *= (weapon != null ? weapon.ElementalMultiplier(ability.Element) : 1)
                     * (armor != null ? armor.ElementalMultiplier(ability.Element) : 1)
                     * (accessory != null ? accessory.ElementalMultiplier(ability.Element) : 1)
-                    * BossElementalMultiplier(ability.Element);
+                    * BossElementalMultiplier(ability.Element)
+                    * AttachElementMultiplier(ability, attachElement);
             }
 
             return damage;
@@ -809,6 +909,27 @@ namespace FFRKInspector.UI
             }
 
             return 1.0f;
+        }
+
+        private float AttachElementMultiplier(GameData.Ability ability, GameData.SchemaConstants.ElementID element)
+        {
+            if (element == GameData.SchemaConstants.ElementID.None)
+            {
+                return 1.0f;
+            }
+
+            if (ability.Element != element)
+            {
+                return 1.0f;
+            }
+
+            //if (typeof(ability.GetType()) == typeof(GameData.SoulBreak))
+            if (typeof(GameData.SoulBreak).IsAssignableFrom(ability.GetType()))
+            {
+                return 1.8f;
+            }
+
+            return 1.5f;
         }
 
         private string abilityTipFor(GameData.Ability ability)
@@ -1748,6 +1869,15 @@ namespace FFRKInspector.UI
                         break;
                 }
             }
+            GameData.SchemaConstants.ElementID attachElement;
+            if (attachElements[index] == null)
+            {
+                attachElement = GameData.SchemaConstants.ElementID.None;
+            }
+            else
+            {
+                attachElement = (GameData.SchemaConstants.ElementID)attachElements[index].AdvantageId;
+            }
             bool characterHasNightmareShift = character.EligibleForNightmareShift(RealmSynergy.NightmareCategory);
             bool characterHasSynergy = character != null && (character.SeriesId == RealmSynergy.SeriesId ||
                 characterHasNightmareShift);
@@ -1768,10 +1898,10 @@ namespace FFRKInspector.UI
                     {
                         foreach (DataRecordMateriaInformation recordMateria in possibleRecordMateria)
                         {
-                            double atk = CalculateStat("Atk", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy);
-                            double mag = CalculateStat("Mag", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy);
-                            double mnd = CalculateStat("Mnd", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy);
-                            double damage = damagePerHit(character, weapon, armor, accessory, recordMateria, atk, mag, mnd, ability);
+                            double atk = CalculateStat("Atk", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[index]);
+                            double mag = CalculateStat("Mag", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[index]);
+                            double mnd = CalculateStat("Mnd", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[index]);
+                            double damage = damagePerHit(character, weapon, armor, accessory, recordMateria, atk, mag, mnd, ability, attachElement);
                             if (damage > maxDamage)
                             {
                                 if (damage > 9999 && maxDamage >= 9999)
@@ -1797,10 +1927,10 @@ namespace FFRKInspector.UI
                     else
                     {
                         DataRecordMateriaInformation recordMateria = recordMaterias[index];
-                        double atk = CalculateStat("Atk", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy);
-                        double mag = CalculateStat("Mag", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy);
-                        double mnd = CalculateStat("Mnd", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy);
-                        double damage = damagePerHit(character, weapon, armor, accessory, recordMateria, atk, mag, mnd, ability);
+                        double atk = CalculateStat("Atk", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[index]);
+                        double mag = CalculateStat("Mag", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[index]);
+                        double mnd = CalculateStat("Mnd", character, weapon, armor, accessory, recordMateria, characterHasSynergy, weaponHasSynergy, armorHasSynergy, accessoryHasSynergy, burstModes[index]);
+                        double damage = damagePerHit(character, weapon, armor, accessory, recordMateria, atk, mag, mnd, ability, attachElement);
                         if (damage > maxDamage)
                         {
                             if (damage > 9999 && maxDamage >= 9999)
@@ -2067,6 +2197,24 @@ namespace FFRKInspector.UI
                 return;
             }
             RecalculateAllStats();
+        }
+
+        private void comboBoxAttachElement_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (skipRecalculations)
+            {
+                return;
+            }
+            RecalculateStats(Int32.Parse(((ComboBox)sender).Name.Last().ToString()) - 1);
+        }
+
+        private void checkBoxBurstMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (skipRecalculations)
+            {
+                return;
+            }
+            RecalculateStats(Int32.Parse(((CheckBox)sender).Name.Last().ToString()) - 1);
         }
     }
 }
